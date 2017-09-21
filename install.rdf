@@ -6,7 +6,7 @@
 	<em:type>2</em:type>
 	<em:bootstrap>true</em:bootstrap>
 	<em:name>Storage Cleaner</em:name>
-	<em:description>Clear Website IndexedDB data when Pale Moon closes</em:description>
+	<em:description>Clear Website IndexedDB Data and asm.js Cache when Pale Moon closes</em:description>
 	<em:creator>Off JustOff &lt;Off.Just.Off@gmail.com&gt;</em:creator>
 	<em:homepageURL>https://github.com/JustOff/storage-cleaner/</em:homepageURL>
 	<em:targetApplication>
