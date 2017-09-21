@@ -22,11 +22,11 @@ function clean_IndexedDB() {
                 }
             }
         }
-    }
-    var qm = Cc["@mozilla.org/dom/quota/manager;1"].getService(Ci.nsIQuotaManager);
-    for (var dom in doms) {
-        var uri = Services.io.newURI(dom, null, null);
-        qm.clearStoragesForURI(uri);
+        var qm = Cc["@mozilla.org/dom/quota/manager;1"].getService(Ci.nsIQuotaManager);
+        for (var dom in doms) {
+            var uri = Services.io.newURI(dom, null, null);
+            qm.clearStoragesForURI(uri);
+        }
     }
 }
 
