@@ -3,15 +3,15 @@
 const {classes: Cc, interfaces: Ci, utils: Cu} = Components;
 Cu.import("resource://gre/modules/Services.jsm");
 
-function clean_IndexedDB() {
+function clear_QuotaManagerData() {
     var stord = Services.dirsvc.get("ProfD", Ci.nsIFile);
     stord.append("storage");
-    if (stord.exists() && stord.isDirectory) {
+    if (stord.exists() && stord.isDirectory()) {
         var doms = {};
         for (var stor of ["default", "permanent", "temporary"]) {
             var storsubd = stord.clone();
             storsubd.append(stor);
-            if (storsubd.exists() && storsubd.isDirectory) {
+            if (storsubd.exists() && storsubd.isDirectory()) {
                 var entries = storsubd.directoryEntries;
                 while(entries.hasMoreElements()) {
                     var host, entry = entries.getNext();
@@ -34,7 +34,7 @@ function startup(data, reason) {}
 
 function shutdown(data, reason) {
     if (reason == APP_SHUTDOWN) {
-        clean_IndexedDB();
+        clear_QuotaManagerData();
     }
 }
 
