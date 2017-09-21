@@ -16,7 +16,7 @@ function clear_QuotaManagerData() {
                 while(entries.hasMoreElements()) {
                     var host, entry = entries.getNext();
                     entry.QueryInterface(Ci.nsIFile);
-                    if ((host = /^(https?)\+\+\+(.+)$/.exec(entry.leafName)) !== null) {
+                    if ((host = /^(https?|file)\+\+\+(.+)$/.exec(entry.leafName)) !== null) {
                         doms[host[1] + "://" + host[2]] = true;
                     }
                 }
